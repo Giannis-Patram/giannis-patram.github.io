@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Giannis Patramanis</title>
+  <style>
+    :root { --ink:#15243b; --muted:#5d6f85; --line:#dbe3ec; --paper:#f5f7fb; --blue:#126eea; --navy:#102b58; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at 8% 8%,#d7f0ff 0,transparent 28%),radial-gradient(circle at 94% 12%,#ebe2ff 0,transparent 25%),radial-gradient(circle at 72% 92%,#d8f8ef 0,transparent 26%),var(--paper); color:var(--ink); font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:1120px; margin:auto; padding:28px 24px 80px; }
+    header { position:relative; display:grid; grid-template-columns:150px 1fr; gap:34px; align-items:center; overflow:hidden; padding:50px 52px; color:var(--ink); background:linear-gradient(115deg,rgba(219,240,255,.76),rgba(239,232,255,.76),rgba(211,246,243,.7)); border:1px solid rgba(255,255,255,.8); border-radius:24px; box-shadow:0 18px 45px rgba(48,68,137,.15); backdrop-filter:blur(14px); }
+    .network { position:absolute; inset:0; z-index:0; width:100%; height:100%; opacity:.73; pointer-events:none; }
+    .network line { stroke:#4386e5; stroke-width:1.3; opacity:.45; }
+    .network circle { fill:#2878e6; }
+    .network .accent { fill:#7b4eea; }
+    .network .cluster-a { animation:network-drift-a 8s ease-in-out infinite alternate; transform-origin:center; }
+    .network .cluster-b { animation:network-drift-b 11s ease-in-out infinite alternate; transform-origin:center; }
+    .network .cluster-c { animation:network-drift-c 7s ease-in-out infinite alternate; transform-origin:center; }
+    header > * { position:relative; z-index:1; }
+    .network { z-index:0; }
+    .portrait { width:150px; height:150px; border:4px solid rgba(255,255,255,.9); border-radius:50%; object-fit:cover; background:#dceeff; box-shadow:0 10px 26px rgba(37,74,147,.2); }
+    .eyebrow { margin:0 0 14px; color:var(--blue); font-size:.78rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    h1,h2 { margin:0; line-height:1.1; letter-spacing:-.045em; }
+    h1 { font-size:clamp(2.3rem,5vw,4.1rem); }
+    h2 { font-size:clamp(1.7rem,3.5vw,2.5rem); }
+    .lede { max-width:650px; margin:21px 0 0; color:#3f5876; font-size:1.17rem; }
+    .section-heading { margin:56px 0 0; }
+    .section-heading .eyebrow { color:var(--blue); }
+    .section-heading p { max-width:620px; margin:14px 0 0; color:var(--muted); }
+    .projects { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:28px; }
+    .project { display:flex; flex-direction:column; overflow:hidden; border:1px solid var(--line); border-radius:18px; background:#fff; box-shadow:0 12px 34px rgba(20,42,78,.07); }
+    .project img { display:block; width:100%; aspect-ratio:16/10; object-fit:cover; object-position:center; border-bottom:1px solid var(--line); }
+    .content { display:flex; flex:1; flex-direction:column; padding:30px; }
+    .tag { margin:0 0 11px; color:var(--blue); font-size:.76rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+    p { margin:16px 0 26px; color:var(--muted); }
+    .button { display:inline-block; align-self:flex-start; margin-top:auto; padding:11px 17px; border-radius:8px; color:#fff; background:var(--blue); font-weight:750; text-decoration:none; }
+    .button:hover { background:#095bc6; }
+    footer { padding:44px 10px 0; color:var(--muted); text-align:center; font-size:.9rem; }
+    @keyframes network-drift-a { from { transform:translate(-12px,8px); } to { transform:translate(22px,-15px); } }
+    @keyframes network-drift-b { from { transform:translate(13px,-12px); } to { transform:translate(-18px,19px); } }
+    @keyframes network-drift-c { from { transform:translate(-8px,-10px); } to { transform:translate(14px,13px); } }
+    @media (prefers-reduced-motion:reduce) { .network .cluster-a,.network .cluster-b,.network .cluster-c { animation:none; } }
+    @media (max-width:700px) { main{padding:14px 14px 55px} header{grid-template-columns:1fr;padding:42px 25px;text-align:center;border-radius:16px}.portrait{margin:auto}.projects{grid-template-columns:1fr;margin-top:28px}.content{padding:25px} }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <svg class="network" viewBox="0 0 1100 330" preserveAspectRatio="none" aria-hidden="true">
+        <g class="cluster-a">
+          <line x1="30" y1="80" x2="165" y2="44"/><line x1="165" y1="44" x2="262" y2="125"/><line x1="30" y1="80" x2="118" y2="190"/><line x1="118" y1="190" x2="262" y2="125"/><line x1="165" y1="44" x2="330" y2="38"/>
+          <circle cx="30" cy="80" r="3"/><circle cx="165" cy="44" r="4"/><circle cx="262" cy="125" r="3"/><circle cx="118" cy="190" r="3"/><circle class="accent" cx="330" cy="38" r="3.5"/>
+        </g>
+        <g class="cluster-b">
+          <line x1="620" y1="45" x2="742" y2="98"/><line x1="742" y1="98" x2="852" y2="35"/><line x1="742" y1="98" x2="890" y2="185"/><line x1="852" y1="35" x2="1030" y2="76"/><line x1="890" y1="185" x2="1030" y2="76"/>
+          <circle cx="620" cy="45" r="3"/><circle class="accent" cx="742" cy="98" r="4"/><circle cx="852" cy="35" r="3"/><circle cx="890" cy="185" r="3"/><circle cx="1030" cy="76" r="4"/>
+        </g>
+        <g class="cluster-c">
+          <line x1="430" y1="260" x2="540" y2="190"/><line x1="540" y1="190" x2="655" y2="270"/><line x1="655" y1="270" x2="770" y2="224"/><line x1="540" y1="190" x2="770" y2="224"/>
+          <circle class="accent" cx="430" cy="260" r="3"/><circle cx="540" cy="190" r="3.5"/><circle cx="655" cy="270" r="3"/><circle cx="770" cy="224" r="4"/>
+        </g>
+      </svg>
+      <img class="portrait" src="assets/giannis-patramanis.jpeg" alt="Portrait of Giannis Patramanis">
+      <div>
+        <p class="eyebrow">Computer Vision and Machine Learning</p>
+        <h1>Giannis Patramanis</h1>
+        <p class="lede">Computer Science graduate focused on machine learning and computer vision. I enjoy turning data, model experimentation, and evaluation into practical applications.</p>
+      </div>
+    </header>
+
+    <section class="section-heading">
+      <p class="eyebrow">Portfolio</p>
+      <h2>Projects</h2>
+      <p>Explore two computer-vision projects, from research-driven image classification to a custom object-detection dataset built from scratch.</p>
+    </section>
+
+    <section class="projects" aria-label="Projects">
+      <article class="project">
+        <img src="assets/skin-classification.png" alt="Skin disease classifier result showing class probabilities and a Grad-CAM image">
+        <div class="content">
+          <p class="tag">Image classification</p>
+          <h2>Skin Disease Image Classification (BSc Dissertation)</h2>
+          <p>End-to-end six-class dermatology image-classification project: compared transfer-learning models, selected and fine-tuned ResNet50 through evaluation, and built a Flask application with prediction probabilities and Grad-CAM explanations.</p>
+          <a class="button" href="skin-disease/">Explore project</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <img src="assets/yolo-annotation.png" alt="Roboflow annotation screen with labelled bounding boxes around snack products">
+        <div class="content">
+          <p class="tag">Object detection</p>
+          <h2>Custom YOLO Object Detection</h2>
+          <p>Custom object-detection project built from scratch: I took 157 photos of 10 snack classes, manually drew and labelled every bounding box in Roboflow, then trained a YOLOv11 model.</p>
+          <a class="button" href="yolo-object-detection/">Explore project</a>
+        </div>
+      </article>
+    </section>
+
+    <footer>Giannis Patramanis · Computer Vision and Machine Learning</footer>
+  </main>
+</body>
+</html>

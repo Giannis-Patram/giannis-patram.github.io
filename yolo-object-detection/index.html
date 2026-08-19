@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A custom YOLOv11 snack object-detection portfolio project.">
+  <title>Custom Snack Object Detection | Giannis Patramanis</title>
+  <style>
+    :root { --ink:#15243b; --muted:#5e6e83; --line:#d9e1eb; --paper:#f5f7fb; --blue:#126eea; --navy:#102b58; --teal:#008f85; --lav:#f0ecff; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { max-width:1120px; margin:auto; padding:28px 24px 76px; }
+    .hero { padding:56px 54px 50px; color:#fff; background:linear-gradient(120deg,#0d2853 0%,#155aaa 57%,#087d9b 100%); border-radius:24px; }
+    .eyebrow { margin:0 0 14px; color:var(--blue); font-size:.78rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    .hero .eyebrow { color:#a9dcfb; }
+    h1,h2,h3 { margin:0 0 15px; line-height:1.12; letter-spacing:-.035em; }
+    h1 { max-width:760px; font-size:clamp(2.25rem,5vw,4rem); }
+    h2 { font-size:clamp(1.6rem,3vw,2.3rem); }
+    h3 { font-size:1.1rem; }
+    p { margin:0 0 18px; }
+    .lede { max-width:720px; margin:24px 0 0; color:#e6f4ff; font-size:1.2rem; }
+    .notice { margin:30px 0 54px; padding:15px 19px; border-left:4px solid #ec9b21; border-radius:7px; background:#fff8e9; color:#714800; }
+    .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:0 0 72px; }
+    .stat { padding:25px 18px; border:1px solid var(--line); border-radius:14px; background:#fff; text-align:center; }
+    .stat strong { display:block; color:var(--blue); font-size:2.2rem; letter-spacing:-.06em; }
+    .stat span { color:var(--muted); font-size:.9rem; }
+    section { margin:76px 0; }
+    .intro { display:grid; grid-template-columns:1.1fr .9fr; gap:34px; align-items:center; }
+    .card { padding:30px; border:1px solid var(--line); border-radius:15px; background:#fff; }
+    ul { margin:0; padding-left:20px; }
+    li + li { margin-top:10px; }
+    .image-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:27px; }
+    figure { margin:0; overflow:hidden; border:1px solid var(--line); border-radius:14px; background:#fff; }
+    figure img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; }
+    figcaption { padding:15px 17px 18px; color:var(--muted); font-size:.91rem; }
+    figcaption strong { display:block; margin-bottom:2px; color:var(--ink); }
+    .metrics { padding:42px; border-radius:18px; background:var(--lav); }
+    .metrics > p { max-width:760px; color:var(--muted); }
+    .metric-image { display:block; width:100%; margin-top:28px; border:1px solid #d3c9ff; border-radius:11px; background:#fff; }
+    .detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:start; }
+    .detail-grid .card:first-child { background:#eef7ff; border-color:#cfe3fb; }
+    .detail-grid .card:last-child { background:#f4fbf9; border-color:#cdece5; }
+    .performance { overflow:hidden; border:1px solid var(--line); border-radius:14px; background:#fff; }
+    .performance img { display:block; width:100%; }
+    .performance div { padding:20px 22px; color:var(--muted); }
+    footer { padding:28px; color:var(--muted); text-align:center; font-size:.9rem; }
+    @media (max-width:700px) { main{padding:14px 14px 52px} .hero{padding:48px 24px 40px;border-radius:16px} .stats,.intro,.image-grid,.detail-grid{grid-template-columns:1fr} section{margin:48px 0}.notice{margin-bottom:42px}.metrics,.card{padding:25px 20px} }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <p class="eyebrow">Computer vision portfolio project</p>
+      <h1>Custom Snack Object Detection</h1>
+      <p class="lede">A 10-class object-detection project built from a self-collected and manually annotated dataset, then trained with YOLOv11 through Roboflow’s hosted workflow.</p>
+    </header>
+
+    <div class="notice"><strong>Project focus:</strong> the end-to-end dataset workflow—collecting images, annotating object locations, validating labels, and evaluating a trained detection model.</div>
+
+    <section class="stats" aria-label="Project summary">
+      <div class="stat"><strong>10</strong><span>snack-product classes</span></div>
+      <div class="stat"><strong>157</strong><span>original images captured</span></div>
+      <div class="stat"><strong>95.4%</strong><span>mAP@50 evaluation result</span></div>
+    </section>
+
+    <section class="intro">
+      <div>
+        <p class="eyebrow">Building the dataset</p>
+        <h2>From physical products to labelled training data</h2>
+        <p>Rather than starting with a ready-made dataset, I selected 10 snack products and captured 157 original images. The images vary object positions, combinations, and orientations to create a practical object-detection dataset.</p>
+        <p>Every image was manually annotated in Roboflow Annotate. For each product instance, I drew a bounding box and assigned the correct class label.</p>
+      </div>
+      <aside class="card">
+        <h3>What the annotation captures</h3>
+        <ul>
+          <li><strong>What</strong> product is present through its class label.</li>
+          <li><strong>Where</strong> it appears through its bounding-box coordinates.</li>
+          <li><strong>How many</strong> products appear when multiple snacks share an image.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section>
+      <p class="eyebrow">Data collection and annotation</p>
+      <h2>Original image to bounding-box labels</h2>
+      <div class="image-grid">
+        <figure>
+          <img src="assets/dataset.png" alt="Original photograph of three snack products on a countertop">
+          <figcaption><strong>Original dataset image</strong>One of the images captured for the custom snack dataset.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/annotation.png" alt="Roboflow Annotate screen showing bounding boxes around three snack products">
+          <figcaption><strong>Manual annotation in Roboflow</strong>Bounding boxes and class labels identify Bounty, Galaktos, and Ion products in the same scene.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="metrics">
+      <p class="eyebrow">Model evaluation</p>
+      <h2>Strong localisation across detection thresholds</h2>
+      <p>The YOLOv11 model was trained using Roboflow’s hosted workflow. Mean Average Precision evaluates whether the model identifies the correct product and places a sufficiently accurate bounding box around it.</p>
+      <div class="detail-grid">
+        <div class="card"><h3>95.4% mAP@50</h3><p>High detection performance when a predicted box overlaps the labelled object by at least 50%.</p></div>
+        <div class="card"><h3>86.8% mAP@50–95</h3><p>Strong performance across increasingly strict bounding-box overlap thresholds.</p></div>
+      </div>
+      <img class="metric-image" src="assets/map-metrics.png" alt="Roboflow mean average precision chart showing 86.8 percent mAP at 50 to 95, 95.4 percent mAP at 50, and 93.5 percent mAP at 75">
+    </section>
+
+    <section>
+      <p class="eyebrow">Performance by class</p>
+      <h2>Inspecting errors, not only one headline score</h2>
+      <p>The per-class analysis uses Roboflow’s recommended 44% confidence threshold. It distinguishes correct predictions from missed detections, misclassifications, and false positives, making it possible to identify which classes need additional data or annotation review.</p>
+      <div class="performance">
+        <img src="assets/class-performance.png" alt="Roboflow chart comparing ground truth, correct predictions, misclassifications, false negatives, and false positives across ten snack classes">
+        <div>Most classes show correct predictions matching their ground-truth counts. The remaining errors provide concrete targets for future data collection and model improvement.</div>
+      </div>
+    </section>
+
+    <section class="detail-grid">
+      <article class="card">
+        <p class="eyebrow">Training workflow</p>
+        <h2>YOLOv11 with Roboflow</h2>
+        <p>Roboflow was used for annotation, dataset versioning, hosted YOLOv11 training, and model evaluation. The platform handled training infrastructure while I focused on dataset quality and interpretation of model results.</p>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Next improvements</p>
+        <h2>Expanding the dataset</h2>
+        <p>Future work would add more images, lighting conditions, backgrounds, occlusions, and product orientations—especially for classes with misses, misclassifications, or false positives.</p>
+      </article>
+    </section>
+  </main>
+  <footer>Custom YOLOv11 object-detection project · Dataset collection, annotation, training, and evaluation</footer>
+</body>
+</html>
